@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.PruebaCarrusel">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="SOY UNA ZONA FIJA"
+                   FontSize="40"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <BoxView WidthRequest="200" Color="Blue"/>
+            <ScrollView Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                    <Frame>
+                        <StackLayout>
+                            <Label Text="Pagina ROJA"
+                               TextColor="Red" FontSize="50"/>
+                            <BoxView Color="Red"
+                                 WidthRequest="200"
+                                HeightRequest="200"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame>
+                        <StackLayout>
+                            <Label Text="Pagina ROSA"
+                               TextColor="Fuchsia" FontSize="50"/>
+                            <BoxView Color="Fuchsia"
+                                 WidthRequest="200"
+                                HeightRequest="200"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame>
+                        <StackLayout>
+                            <Label Text="Pagina AZUL"
+                               TextColor="Blue" FontSize="50"/>
+                            <BoxView Color="Blue"
+                                 WidthRequest="200"
+                                HeightRequest="200"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame>
+                        <StackLayout>
+                            <Label Text="Pagina NARANJA"
+                               TextColor="Orange" FontSize="50"/>
+                            <BoxView Color="Orange"
+                                 WidthRequest="200"
+                                HeightRequest="200"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>                    
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

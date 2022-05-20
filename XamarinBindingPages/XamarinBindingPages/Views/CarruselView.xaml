@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.CarruselView">
+    <ContentPage Title="Rojo">
+        <StackLayout>
+            <Label Text="Pagina ROJA"
+                   TextColor="Red" FontSize="50"/>
+            <BoxView Color="Red"
+                     WidthRequest="200"
+                     HeightRequest="200"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Morado">
+        <StackLayout>
+            <Label Text="Pagina MORADA"
+                   TextColor="Purple" FontSize="50"/>
+            <BoxView Color="Purple"
+                     WidthRequest="200"
+                     HeightRequest="200"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Amarillo">
+        <StackLayout>
+            <Label Text="Pagina Amarilla"
+                   TextColor="Yellow" FontSize="50"/>
+            <BoxView Color="Yellow"
+                     WidthRequest="200"
+                     HeightRequest="200"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Verde">
+        <StackLayout>
+            <Label Text="Pagina Verde"
+                   TextColor="GreenYellow" FontSize="50"/>
+            <BoxView Color="GreenYellow"
+                     WidthRequest="200"
+                     HeightRequest="200"
+                     HorizontalOptions="Center"
+                     VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage>    
+</CarouselPage>
