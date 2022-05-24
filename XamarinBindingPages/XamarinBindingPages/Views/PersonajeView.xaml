@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.PersonajeView"
+             xmlns:viewmodels="clr-namespace:XamarinBindingPages.ViewModels">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <viewmodels:PersonajeViewModel/>
+            </StackLayout.BindingContext>
+            <Label Text="Acciones ViewModel"
+                   FontSize="40"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Nombre Personaje"
+                   Text="{Binding Personaje.Nombre}"/>
+            <Entry Placeholder="Serie"
+                   Text="{Binding Personaje.Serie}"/>
+            <Entry Placeholder="Imagen Personaje"
+                   Text="{Binding Personaje.Imagen}"/>
+            <Label Text="{Binding Personaje.Nombre}" FontSize="25" 
+                   TextColor="Black"/>
+            <Label Text="{Binding Personaje.Serie}" FontSize="25" 
+                   TextColor="Black"/>
+            <Image Source="{Binding Personaje.Imagen}"
+                WidthRequest="200" HeightRequest="200"/>
+            <Button Text="Mostrar Personaje"/>
+            <Button Text="Nuevo Personaje" Command="{Binding NewPersonaje}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinBindingPages.Views.BindingClassView">
+             x:Class="XamarinBindingPages.Views.BindingClassView"
+             xmlns:models="clr-namespace:XamarinBindingPages.Models">
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout.BindingContext>
+                <models:Comic Titulo="Daredevil (2022)"
+                              Personaje="Daredevil"
+                              Autor="Chip Zdarsky"
+                              Imagen="https://d29xot63vimef3.cloudfront.net/image/daredevil/50-3.jpg"/>
+            </StackLayout.BindingContext>
             <Label Text="Binding Class" FontSize="45"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
@@ -16,7 +23,6 @@
             <Label FontSize="Medium"
                    Text="{Binding Autor}"/>
             <Image Source="{Binding Imagen}"
-                   BackgroundColor="Yellow"
                    WidthRequest="400" HeightRequest="350"/>
         </StackLayout>
     </ContentPage.Content>

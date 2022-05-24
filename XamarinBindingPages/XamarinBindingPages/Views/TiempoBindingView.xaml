@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.TiempoBindingView"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewmodels="clr-namespace:XamarinBindingPages.ViewModels">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <viewmodels:TiempoBindingViewModel/>
+            </StackLayout.BindingContext>
+            <Label Text="Binding VIEWMODEL"
+                VerticalOptions="Start"  FontSize="40"
+                HorizontalOptions="CenterAndExpand" />
+            <Label FontSize="Large" TextColor="Blue"
+                   Text="{Binding Tiempo.DayOfWeek}"/>
+            <Label FontSize="Large" TextColor="Blue"
+                   Text="{Binding Tiempo, StringFormat='Mes: {0:MMMM}'}"/>            
+            <Label FontSize="Large" TextColor="Red"
+                   Text="{Binding Tiempo.Year, StringFormat='Anyo: {0}'}"/>
+            <Label FontSize="50" TextColor="Black"
+                   Text="{Binding Tiempo, StringFormat='{0:T}'}"/>
+            <Label FontSize="50" TextColor="Fuchsia"
+                   Text="{Binding Hora}"/>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
