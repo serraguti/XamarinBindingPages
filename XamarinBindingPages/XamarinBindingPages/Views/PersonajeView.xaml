@@ -13,19 +13,21 @@
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
             <Entry Placeholder="Nombre Personaje"
-                   Text="{Binding Personaje.Nombre}"/>
+                   Text="{Binding Nombre}"/>
             <Entry Placeholder="Serie"
-                   Text="{Binding Personaje.Serie}"/>
+                   Text="{Binding Personaje.Serie, Mode=TwoWay}"/>
             <Entry Placeholder="Imagen Personaje"
-                   Text="{Binding Personaje.Imagen}"/>
-            <Label Text="{Binding Personaje.Nombre}" FontSize="25" 
+                   Text="{Binding Personaje.Imagen, Mode=TwoWay}"/>
+            <Label Text="{Binding Personaje.Nombre,Mode=TwoWay}" FontSize="25" 
                    TextColor="Black"/>
             <Label Text="{Binding Personaje.Serie}" FontSize="25" 
                    TextColor="Black"/>
             <Image Source="{Binding Personaje.Imagen}"
                 WidthRequest="200" HeightRequest="200"/>
-            <Button Text="Mostrar Personaje"/>
+            <Button Text="Mostrar Personaje" Command="{Binding MostrarDescripcion}"/>
             <Button Text="Nuevo Personaje" Command="{Binding NewPersonaje}"/>
+            <Label Text="{Binding Descripcion}"
+                   FontSize="25" TextColor="Blue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
