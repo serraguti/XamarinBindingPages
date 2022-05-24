@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinBindingPages.Views;
 
 namespace XamarinBindingPages
 {
@@ -10,7 +11,7 @@ namespace XamarinBindingPages
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new BindingClassView();
         }
 
         protected override void OnStart()

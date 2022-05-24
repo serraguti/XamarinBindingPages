@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.BindingObjectsView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="BINDING OBJECTS"
+                VerticalOptions="Start" FontSize="45"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Introduzca texto..."
+                   x:Name="cajaTexto"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label FontSize="30" TextColor="Red"
+                   BindingContext="{x:Reference cajaTexto}"
+                   Text="{Binding Path=Text}"/>
+            <Slider Minimum="0" Maximum="360"
+                    x:Name="sliderRotacion"/>
+            <Label FontSize="30" TextColor="Blue"
+                   BindingContext="{x:Reference sliderRotacion}"
+                   Rotation="{Binding Path=Value}"
+                   Text="Soy un Label"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
