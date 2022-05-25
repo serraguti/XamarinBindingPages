@@ -11,7 +11,7 @@ namespace XamarinBindingPages
         {
             InitializeComponent();
 
-            MainPage = new PersonajeView();
+            MainPage = new CelsiusFarenhaitView();
         }
 
         protected override void OnStart()
