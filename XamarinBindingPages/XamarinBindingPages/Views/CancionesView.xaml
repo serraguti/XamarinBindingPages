@@ -1,19 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinBindingPages.Views.CancionesView">
+             x:Class="XamarinBindingPages.Views.CancionesView"
+             xmlns:viewmodels="clr-namespace:XamarinBindingPages.ViewModels">
     <ContentPage.Content>
         <StackLayout>
+            <StackLayout.BindingContext>
+                <viewmodels:CancionesViewModel/>
+            </StackLayout.BindingContext>
             <Label Text="Control ListView!" FontSize="40"
                    TextColor="Red"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-            <ListView x:Name="listviewCanciones">
+            <ListView RowHeight="100" ItemsSource="{Binding Canciones}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                
+                                <Image Source="{Binding Imagen}"
+                                       WidthRequest="80"
+                                       HeightRequest="80"/>
+                                <StackLayout Orientation="Vertical">
+                                    <Label FontSize="15"
+                                           Text="{Binding Artista}"
+                                           TextColor="Fuchsia"/>
+                                    <Label FontSize="18"
+                                           Text="{Binding Titulo}"
+                                           TextColor="Black"/>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
