@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.NumerosColoresView"
+             xmlns:viewmodels="clr-namespace:XamarinBindingPages.ViewModels"
+             xmlns:converters="clr-namespace:XamarinBindingPages.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ConverterNumerosColores x:Key="converternumeroscolores"
+                ColorNegativo="LightCoral"
+                ColorPositivo="LightGreen"/>
+            <converters:ConverterNumerosToImagen 
+                x:Key="converternumerostoimagen"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <viewmodels:NumerosColoresViewModel/>
+            </StackLayout.BindingContext>
+            <Label Text="Listview Converters"
+                VerticalOptions="Start"  FontSize="40"
+                   TextColor="Blue"
+                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Numeros}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="40" 
+                                   Text="{Binding .}"
+BackgroundColor="{Binding ., Converter={StaticResource converternumeroscolores}}"/>
+                                <Image 
+Source="{Binding ., Converter={StaticResource converternumerostoimagen}}"
+WidthRequest="50"                                    
+HeightRequest="50"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

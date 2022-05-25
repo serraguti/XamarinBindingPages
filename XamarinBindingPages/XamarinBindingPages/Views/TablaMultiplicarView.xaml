@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.TablaMultiplicarView"
+             xmlns:viewmodels="clr-namespace:XamarinBindingPages.ViewModels">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.BindingContext>
+                <viewmodels:TablaMultiplicarViewModel/>
+            </StackLayout.BindingContext>
+            <Label Text="Tabla Multiplicar" FontSize="40"
+                   TextColor="Blue"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="CenterAndExpand" />
+            <Label Text="Introduzca numero"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   Text="{Binding Numero}"/>
+            <Button TextColor="Blue" Text="MOSTRAR TABLA"
+                    Command="{Binding MostrarTablaMultiplicar}"/>
+            <ListView ItemsSource="{Binding TablaMultiplicar}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Operacion}"
+                                       FontSize="30" TextColor="Red"/>
+                                <Label Text="{Binding Resultado}"
+                                       FontSize="30" TextColor="Blue"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
