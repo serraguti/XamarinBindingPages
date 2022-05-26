@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinBindingPages.Views.MenuPrincipalView">
+    <MasterDetailPage.Master>
+        <!--AQUI IRA LA PAGINA DEL MENU PRINCIPAL-->
+        <ContentPage Title="Menu Xamarin"
+                     BackgroundColor="LightCoral">
+            <StackLayout Orientation="Vertical">
+                <StackLayout HeightRequest="75" BackgroundColor="AliceBlue">
+                    <Label Text="Menu Principal" FontSize="50"
+                           TextColor="Black"/>
+                </StackLayout>
+                <ListView x:Name="listViewMenu" RowHeight="80"
+                          SeparatorVisibility="Default"
+                          BackgroundColor="LightGreen">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="20" Orientation="Horizontal">
+                                    <Image Source="{Binding Imagen}"
+                                           WidthRequest="30" HeightRequest="30"/>
+                                    <Label Text="{Binding Titulo}"
+                                           FontSize="20" TextColor="Black" 
+                                           Padding="10"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <!--AQUI IRAN INTEGRADAS LAS PAGINAS HIJAS-->
+        <NavigationPage></NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

@@ -11,7 +11,7 @@ namespace XamarinBindingPages
         {
             InitializeComponent();
 
-            MainPage = new NumerosColoresView();
+            MainPage = new MenuPrincipalView();
         }
 
         protected override void OnStart()
